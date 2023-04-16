@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Kursovou_proekt</string>
+    <string name="sales_icon">Sales</string>
+    <string name="contacts_text">Контакты</string>
+    <string name="about_text">Про нас</string>
+    <string name="main_scene_text">Главная</string>
+    <string name="logo_of_app_1">Game</string>
+    <string name="logo_of_app_2">SHOP</string>
+    <string name="Game_date">Дата выхода</string>
+    <string name="Game_poster">Разработчик</string>
+    <string name="game_desc">Массовая многопользовательская ролевая онлайн-игра, разработанная и издаваемая компанией Blizzard Entertainment. Действие World of Warcraft происходит в фэнтезийной вселенной Warcraft.</string>
+
+
+</resources>
