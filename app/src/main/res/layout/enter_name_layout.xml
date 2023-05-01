@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<EditText
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:id="@+id/edt_name"
+    android:hint="Name"
+    android:layout_width="match_parent"
+    android:inputType="text"
+    android:layout_height="wrap_content">
+    <!--        app:met_textColorHint="#AFAFAF"-->
+    <!--        app:met_baseColor="@color/white"-->
+    <!--        app:met_primaryColor="@color/white"-->
+    <!--        app:met_iconLeft="@drawable/ic_lock"-->
+    <!--        app:met_iconPadding="10dp">-->
+
+</EditText>

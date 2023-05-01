@@ -3,9 +3,14 @@ package com.example.kursovou_proekt;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import Model.Order;
 
 public class GamePage extends AppCompatActivity {
 
@@ -27,5 +32,21 @@ public class GamePage extends AppCompatActivity {
         gameDate.setText(getIntent().getStringExtra("gameDate"));
         gamePoster.setText(getIntent().getStringExtra("gamePoster"));
         gameText.setText(getIntent().getStringExtra("gameText"));
+    }
+
+    public void addToCart(View view) {
+        int item_id = getIntent().getIntExtra("gameId", 0);
+        Order.items_id.add(item_id);
+        Toast.makeText(this,"Добавлено", Toast.LENGTH_LONG).show();
+    }
+
+    public void openShoppingCart(View view){
+        Intent intent = new Intent(this, OrderPage.class);
+        startActivity(intent);
+    }
+
+    public void openMainPage(View view){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }
