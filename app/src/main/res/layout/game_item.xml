@@ -39,7 +39,7 @@
                 android:layout_margin="10dp"
                 android:fontFamily="@font/montserrat_bold"
                 android:text="@string/app_name"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="20sp" />
 
 
@@ -54,7 +54,7 @@
                     android:layout_margin="10dp"
                     android:fontFamily="@font/montserrat"
                     android:text="@string/Game_date"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="18sp" />
 
                 <TextView
@@ -64,7 +64,7 @@
                     android:layout_marginTop="20dp"
                     android:fontFamily="@font/montserrat"
                     android:text="@string/Game_poster"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
 
                     android:textSize="18sp" />
 
@@ -83,7 +83,7 @@
                     android:layout_margin="10dp"
                     android:fontFamily="@font/montserrat_bold"
                     android:text="@string/app_name"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="18sp" />
 
                 <TextView
@@ -95,7 +95,7 @@
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/montserrat_bold"
                     android:text="@string/app_name"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
 
                     android:textSize="18sp" />
 

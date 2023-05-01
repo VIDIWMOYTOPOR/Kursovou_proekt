@@ -1,82 +1,72 @@
 package Model;
 
 public class Game {
-    int id, category;
-    String img, title, date, color, poster, text;
+    int id_game, game_category;
+    String game_name, game_price, game_publish, game_publisher, discription;
 
-    public Game(int id, String img, String title, String date, String color, String poster, String text, int category) {
-        this.id = id;
-        this.img = img;
-        this.title = title;
-        this.date = date;
-        this.color = color;
-        this.poster = poster;
-        this.text = text;
-        this.category = category;
-
+    public Game(int id_game, String game_name, String game_price, String game_publish, String game_publisher, String discription, int game_category) {
+        this.id_game = id_game;
+        this.game_name = game_name;
+        this.game_price = game_price;
+        this.game_publish = game_publish;
+        this.game_publisher = game_publisher;
+        this.discription = discription;
+        this.game_category = game_category;
     }
 
     public int getCategory() {
-        return category;
+        return game_category;
     }
 
     public void setCategory(int category) {
-        this.category = category;
+        this.game_category = category;
+    }
+
+    public String getGamePrice() {
+        return game_price;
+    }
+
+    public void setGamePrice(String price) {
+        this.game_price = price;
     }
 
     public String getText() {
-        return text;
+        return discription;
     }
 
     public void setText(String text) {
-        this.text = text;
+        this.discription = text;
     }
 
     public int getId() {
-        return id;
+        return id_game;
     }
 
     public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getImg() {
-        return img;
-    }
-
-    public void setImg(String img) {
-        this.img = img;
+        this.id_game = id;
     }
 
     public String getTitle() {
-        return title;
+        return game_name;
     }
 
     public void setTitle(String title) {
-        this.title = title;
+        this.game_name = title;
     }
 
     public String getDate() {
-        return date;
+        return game_publish;
     }
 
     public void setDate(String date) {
-        this.date = date;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
+        this.game_publish = date;
     }
 
     public String getPoster() {
-        return poster;
+        return game_publisher;
     }
 
     public void setPoster(String poster) {
-        this.poster = poster;
+        this.game_publisher = poster;
     }
 }

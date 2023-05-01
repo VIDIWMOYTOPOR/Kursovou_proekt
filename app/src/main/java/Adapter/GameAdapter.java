@@ -1,5 +1,6 @@
 package Adapter;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Context;
@@ -42,11 +43,8 @@ public class GameAdapter extends RecyclerView.Adapter<GameAdapter.GameViewHolder
     }
 
     @Override
-    public void onBindViewHolder(@NonNull GameViewHolder holder, int position) {
-        holder.gameBg.setCardBackgroundColor(Color.parseColor(games.get(position).getColor()));
+    public void onBindViewHolder(@NonNull GameViewHolder holder, @SuppressLint("RecyclerView") int position) {
 
-        int imageId = context.getResources().getIdentifier(games.get(position).getImg(), "drawable",context.getPackageName());
-        holder.gameImage.setImageResource(imageId);
 
         holder.gameTitle.setText(games.get(position).getTitle());
         holder.gameDate.setText(games.get(position).getDate());
@@ -63,8 +61,6 @@ public class GameAdapter extends RecyclerView.Adapter<GameAdapter.GameViewHolder
                         new Pair<View, String>(holder.gameImage,"gameImage")
                         );
 
-                intent.putExtra("gameBg",Color.parseColor(games.get(position).getColor()));
-                intent.putExtra("gameImage",imageId);
                 intent.putExtra("gameTitle",games.get(position).getTitle());
                 intent.putExtra("gameDate",games.get(position).getDate());
                 intent.putExtra("gamePoster",games.get(position).getPoster());
