@@ -1,7 +1,5 @@
 package com.example.kursovou_proekt;
 
-import static android.content.ContentValues.TAG;
-
 import static com.example.kursovou_proekt.database.DatabaseHelper.TABLE_USERS;
 
 import androidx.annotation.NonNull;
@@ -17,30 +15,16 @@ import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import Model.Categoryy;
 import Model.User;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
-import retrofit2.http.Query;
 
 
-import com.afollestad.materialdialogs.DialogAction;
-import com.afollestad.materialdialogs.MaterialDialog;
-import com.example.kursovou_proekt.Retrofit.INodeJS;
-import com.example.kursovou_proekt.Retrofit.RetrofitClient;
 import com.example.kursovou_proekt.database.DatabaseHelper;
-import com.github.javiersantos.materialstyleddialogs.MaterialStyledDialog;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonObject;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -54,16 +38,9 @@ import Adapter.CategoryAdapter;
 import Adapter.GameAdapter;
 import Model.Category;
 import Model.Game;
-import io.reactivex.Observable;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
-import io.reactivex.schedulers.Schedulers;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
-import retrofit2.Retrofit;
-import io.reactivex.Observer;
 
 
 public class MainActivity extends AppCompatActivity  {
