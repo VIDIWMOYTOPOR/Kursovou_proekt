@@ -11,7 +11,9 @@ public class RetrofitClient {
     public static Retrofit getInstance(){
         if(instance == null)
             instance = new Retrofit.Builder()
-                    .baseUrl("http://10.0.2.2:3000/")
+                    .baseUrl("http://10.0.2.2:3000/")     //через эмулятор
+                    //.baseUrl("http://192.168.1.101:3000/")
+
                     //
                     //
                     .addConverterFactory(ScalarsConverterFactory.create())

@@ -49,6 +49,8 @@ public class GameAdapter extends RecyclerView.Adapter<GameAdapter.GameViewHolder
         holder.gameTitle.setText(games.get(position).getTitle());
         holder.gameDate.setText(games.get(position).getDate());
         holder.gamePoster.setText(games.get(position).getPoster());
+        holder.gamePrice.setText(games.get(position).getGamePrice());
+
 
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -66,6 +68,7 @@ public class GameAdapter extends RecyclerView.Adapter<GameAdapter.GameViewHolder
                 intent.putExtra("gamePoster",games.get(position).getPoster());
                 intent.putExtra("gameText",games.get(position).getText());
                 intent.putExtra("gameId",games.get(position).getId());
+                intent.putExtra("gamePrice",games.get(position).getGamePrice());
 
 
                 context.startActivity(intent, options.toBundle());
@@ -83,7 +86,7 @@ public class GameAdapter extends RecyclerView.Adapter<GameAdapter.GameViewHolder
 
         CardView gameBg;
         ImageView gameImage;
-        TextView gameTitle, gameDate, gamePoster;
+        TextView gameTitle, gameDate, gamePoster, gamePrice;
 
 
 
@@ -95,6 +98,7 @@ public class GameAdapter extends RecyclerView.Adapter<GameAdapter.GameViewHolder
             gameTitle = itemView.findViewById(R.id.gameTitle);
             gameDate = itemView.findViewById(R.id.gameDate);
             gamePoster = itemView.findViewById(R.id.gamePoster);
+            gamePrice = itemView.findViewById(R.id.textView5);
 
 
         }

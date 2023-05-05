@@ -42,7 +42,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MainActivity.showGamesByCategory(categories.get(position).getId());
+                MainActivity.showGamesByCategory(categories.get(position).getTitle());
             }
         });
     }

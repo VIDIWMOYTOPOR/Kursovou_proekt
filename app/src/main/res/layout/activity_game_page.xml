@@ -82,7 +82,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
-        android:id="@+id/GamePageImage"
+        android:id="@+id/gameImage"
         android:layout_width="305dp"
         android:layout_height="202dp"
         android:scaleType="centerCrop"
@@ -104,7 +104,7 @@
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/constraintLayout"
-        app:layout_constraintTop_toBottomOf="@+id/GamePageImage" />
+        app:layout_constraintTop_toBottomOf="@+id/gameImage" />
 
 
     <androidx.cardview.widget.CardView
@@ -198,13 +198,13 @@
         android:id="@+id/gamePageText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="40dp"
         android:fontFamily="@font/montserrat"
         android:text="@string/game_desc"
         android:textColor="@color/black"
-        android:textSize="14sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/constraintLayout"
         app:layout_constraintTop_toBottomOf="@+id/gameBg" />
@@ -214,14 +214,39 @@
         android:layout_width="150dp"
         android:layout_height="65dp"
         android:layout_marginStart="96dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="11dp"
         android:layout_marginEnd="96dp"
         android:onClick="addToCart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toEndOf="@+id/constraintLayout"
-        app:layout_constraintTop_toBottomOf="@+id/gamePageText"
+        app:layout_constraintTop_toBottomOf="@+id/gamePagePrice"
         app:srcCompat="@drawable/addtocard" />
+
+    <TextView
+        android:id="@+id/gamePagePrice"
+        android:layout_width="111dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="125dp"
+        android:layout_marginTop="10dp"
+        android:text="TextView"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.068"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout"
+        app:layout_constraintTop_toBottomOf="@+id/gamePageText" />
+
+    <TextView
+        android:id="@+id/textView"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="10dp"
+        android:text="Цена:"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout"
+        app:layout_constraintTop_toBottomOf="@+id/gamePageText" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

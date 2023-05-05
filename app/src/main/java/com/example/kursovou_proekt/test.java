@@ -2,6 +2,7 @@ package com.example.kursovou_proekt;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -131,8 +132,16 @@ public class test extends AppCompatActivity {
                         if (s.contains("encrypted_password")) {
                             Toast.makeText(test.this, "Login Success", Toast.LENGTH_LONG).show();
                             Intent intent = new Intent(test.this, MainActivity.class);
-                            intent.putExtra("email", email); // Добавляем email в Intent
+                            //intent.putExtra("email", email); // Добавляем email в Intent
                             startActivity(intent);
+
+                            SharedPreferences sharedPreferences = getSharedPreferences("myPrefs", MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.putString("email", email);
+                            editor.apply();
+
+
+
 
                         }
                         else

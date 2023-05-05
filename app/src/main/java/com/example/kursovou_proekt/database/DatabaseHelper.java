@@ -1,6 +1,8 @@
 package com.example.kursovou_proekt.database;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -8,10 +10,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "userstore.db"; // название бд
     private static final int SCHEMA = 1; // версия базы данных
-    static final String TABLE_USERS = "users"; // название таблицы пользователей
-    static final String TABLE_GAMES = "games"; // название таблицы игр
-    static final String TABLE_ORDERS = "orders";
-    static final String TABLE_CATEGORY = "category";
+    public static final String TABLE_USERS = "users"; // название таблицы пользователей
+    public static final String TABLE_GAMES = "games"; // название таблицы игр
+    public static final String TABLE_ORDERS = "orders";
+    public static final String TABLE_CATEGORY = "category";
 
 
 
@@ -37,16 +39,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     // названия столбцов таблицы "orders"
-    static final String ORDER_ID = "id_order";
-    static final String ORDER_USER_ID = "id_user";
-    static final String ORDER_GAME_ID = "id_game";
-    static final String ORDER_GAME_NAME = "game_name";
-    static final String ORDER_DATE = "order_date";
+    public static final String ORDER_ID = "id_order";
+    public static final String ORDER_USER_ID = "id_user";
+    public static final String ORDER_GAME_ID = "id_game";
+    public static final String ORDER_GAME_NAME = "game_name";
+    public static final String ORDER_DATE = "order_date";
 
 
     // названия столбцов таблицы "category"
-    static final String CATEGORY_ID = "id_order";
-    static final String CATEGORY_TITLE = "title";
+    public static final String CATEGORY_ID = "id_order";
+    public static final String CATEGORY_TITLE = "title";
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, SCHEMA);
@@ -69,7 +71,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 + ID_GAME + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + GAME_NAME + " VARCHAR(45) NOT NULL, "
                 + GAME_PRICE + " VARCHAR(45), "
-                + GAME_DESCRIPTION + " VARCHAR(45), "
+                + GAME_DESCRIPTION + " VARCHAR(300), "
                 + GAME_PUBLISHER + " VARCHAR(45), "
                 + GAME_PUBLISHED + " DATETIME, "
                 + GAME_CATEGORY + " VARCHAR(45),"
@@ -80,19 +82,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String createOrderTable = "CREATE TABLE " + TABLE_ORDERS + " ("
                 + ORDER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + ORDER_USER_ID + " INT NOT NULL, "
-                + ORDER_GAME_ID + " INT, "
                 + ORDER_GAME_NAME + " VARCHAR(45), "
-                + ORDER_DATE + " DATETIME, "
                 + "FOREIGN KEY(" + ORDER_USER_ID + ") REFERENCES " + TABLE_USERS + "(" + USER_ID + "), "
-                + "FOREIGN KEY(" + ORDER_GAME_ID + ") REFERENCES " + TABLE_GAMES + "(" + ID_GAME + "), "
                 + "FOREIGN KEY(" + ORDER_GAME_NAME + ") REFERENCES " + TABLE_GAMES + "(" + GAME_NAME + "))";
         db.execSQL(createOrderTable);
 
+
         // создаем таблицу "category"
         String createCategoryTable = "CREATE TABLE " + TABLE_CATEGORY + " ("
-                + CATEGORY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + CATEGORY_ID + " VARCHAR(45) PRIMARY KEY, "
                 + CATEGORY_TITLE + " VARCHAR(45) NOT NULL) ";
         db.execSQL(createCategoryTable);
+
+
+
+
+
+
 
     }
 
@@ -104,9 +110,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    public int getUserIdByEmail(String email) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String[] columns = {USER_ID};
+        String selection = USER_EMAIL + "=?";
+        String[] selectionArgs = {email};
+        Cursor cursor = db.query(TABLE_USERS, columns, selection, selectionArgs, null, null, null);
+        int userId = -1;
+        cursor.close();
+        return userId;
+    }
+
     public static SQLiteDatabase getDatabase(Context context) {
         return new DatabaseHelper(context).getWritableDatabase();
     }
-
 
 }

@@ -30,7 +30,6 @@ public interface INodeJS {
                                     @Field("password") String password);
 
 
-    @GET("category_from_client/")
-    Observable<Response<List<Categoryy>>> getCategoryList();
+
 
 }

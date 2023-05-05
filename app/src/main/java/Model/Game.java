@@ -1,10 +1,10 @@
 package Model;
 
 public class Game {
-    int id_game, game_category;
-    String game_name, game_price, game_publish, game_publisher, discription;
+    int id_game;
+    String game_name, game_price, game_publish, game_publisher, discription, game_category;
 
-    public Game(int id_game, String game_name, String game_price, String game_publish, String game_publisher, String discription, int game_category) {
+    public Game(int id_game, String game_name, String game_price, String game_publish, String game_publisher, String discription, String game_category) {
         this.id_game = id_game;
         this.game_name = game_name;
         this.game_price = game_price;
@@ -14,11 +14,11 @@ public class Game {
         this.game_category = game_category;
     }
 
-    public int getCategory() {
+    public String getCategory() {
         return game_category;
     }
 
-    public void setCategory(int category) {
+    public void setCategory(String category) {
         this.game_category = category;
     }
 
